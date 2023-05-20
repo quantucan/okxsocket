@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "okxsocket", "okxsocket\okxsocket.pyproj", "{8DE8BF4E-86DF-4F29-B785-58AAA5EA7284}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DE8BF4E-86DF-4F29-B785-58AAA5EA7284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DE8BF4E-86DF-4F29-B785-58AAA5EA7284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6935E81F-A0E9-4AB9-ADFD-A1A59F34DA81}
+	EndGlobalSection
+EndGlobal

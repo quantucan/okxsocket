@@ -1,0 +1,1 @@
+OKXSocket is Python module that connects to OKX cryptocurrency exchange servers via Websocket protocol and translates cryprocurrency quotes (namely BTC-USDT and ETH-USDT) of various periodicity into Telegram bot @KursChelBot. Users can choose which cryptocurrency quotes to translate and periods of updates.
