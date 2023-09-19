@@ -8,6 +8,8 @@ import hmac
 import time
 import json
 
+RUN = True
+
 okxlogger = logging.getLogger(__name__)
 okxlogger.setLevel(logging.DEBUG)
 
@@ -24,10 +26,17 @@ ch.setFormatter(formatter)
 okxlogger.addHandler(fh)
 okxlogger.addHandler(ch)
 
+def sigint_handler(signum, frame):    
+    global RUN
+
+    RUN = False
+
 async def okx_response_handler(websocket, bot):
+    global RUN
+
     async for msg in websocket:        
         try:
-            if config.RUN == True:
+            if RUN == True:
                 resp = json.loads(msg)
                 
                 if 'event' in resp:

@@ -1,4 +1,4 @@
-wsslink = '' #OKX websocket link
+wsslink = 'wss://ws.okx.com:8443/ws/v5/public' #OKX websocket link
 #Public WebSocket: wss://ws.okx.com:8443/ws/v5/public
 #Private WebSocket: wss://ws.okx.com:8443/ws/v5/private
 #Public WebSocket: wss://wsaws.okx.com:8443/ws/v5/public
@@ -7,12 +7,12 @@ wsslink = '' #OKX websocket link
 apikey = ''
 passphrase= ''
 secretkey = ''
+
 #IP = ""
 #API name = "okx_api_key1"
 #Permissions = "Read"
 
 tg_token = '' #Telegram bot token
 
-SUBSCRIPTIONS = {'BTC-USDT' : [], 'ETH-USDT' : []}
+SUBSCRIPTIONS = {'BTC-USDT' : [], 'ETH-USDT' : [], 'TON-USDT' : []}
 CHAT_TASKS = {}
-RUN = True

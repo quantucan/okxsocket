@@ -1,7 +1,7 @@
 #import config
 from . import config
-#from okxsocket import okx_response_handler, okx_subscribe, okx_login_request
-from .okxsocket import okx_response_handler, okx_subscribe, okx_login_request
+#from okxsocket import sigint_handler, okx_response_handler, okx_subscribe, okx_login_request
+from .okxsocket import sigint_handler, okx_response_handler, okx_subscribe, okx_login_request
 
 import signal
 import logging
@@ -99,10 +99,6 @@ async def update_subscribtions(update: Update, context: ContextTypes):
 
     return
 
-def sigint_handler(signum, frame):    
-    botlogger.info('Stopping...')
-    config.RUN = False
-
 async def main():
     signal.signal(signal.SIGINT, sigint_handler)
     
@@ -110,7 +106,7 @@ async def main():
     await application.initialize()
     await application.start()
     await application.updater.start_polling()
-    botlogger.info('Bot has started')    
+    botlogger.info('Bot has started')
     
     application.add_handler(CommandHandler('subscribe', subscribe_quotes))
     application.add_handler(CommandHandler('unsubscribe', unsubscribe_quotes))
@@ -127,14 +123,15 @@ async def main():
                     tg.create_task(okx_subscribe(websocket, k))
             
             await okx_response_handler(websocket, application.bot)
-
-            if config.RUN == False:
-                await websocket.close()
-                break
-
+            
+            break
+        
         except websockets.exceptions.ConnectionClosedError:
             continue
     
+    print('Stopping...')
+    await websocket.close()
+
     await application.updater.stop()
     await application.stop()
     await application.shutdown()
