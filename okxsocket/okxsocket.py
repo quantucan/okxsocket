@@ -1,5 +1,7 @@
 #import config
 from . import config
+
+import os
 import logging
 import asyncio
 import base64
@@ -13,7 +15,7 @@ RUN = True
 okxlogger = logging.getLogger(__name__)
 okxlogger.setLevel(logging.DEBUG)
 
-fh = logging.FileHandler('app.log', mode = 'a')
+fh = logging.FileHandler(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'okxsocket.log'), mode = 'a')
 fh.setLevel(logging.DEBUG)
 
 ch = logging.StreamHandler()

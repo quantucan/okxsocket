@@ -362,7 +362,7 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-[Dd]dist
+[Dd]ist
 config1.py
 okxsocket.egg-info
 

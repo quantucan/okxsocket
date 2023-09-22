@@ -3,6 +3,7 @@ from . import config
 #from okxsocket import sigint_handler, okx_response_handler, okx_subscribe, okx_login_request
 from .okxsocket import sigint_handler, okx_response_handler, okx_subscribe, okx_login_request
 
+import os
 import signal
 import logging
 import json
@@ -12,7 +13,7 @@ import websockets.exceptions
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
 from telegram import Bot, Update, InlineKeyboardButton, InlineKeyboardMarkup
 
-fh = logging.FileHandler('app.log', mode = 'a')
+fh = logging.FileHandler(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'okxsocket.log'), mode = 'a')
 fh.setLevel(logging.DEBUG)
 
 ch = logging.StreamHandler()
